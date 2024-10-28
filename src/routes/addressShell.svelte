@@ -8,10 +8,11 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="text-center mb-12">
       <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-        At LMU, we illuminate new ways of thinking where creativity is boundless
-        and justice prevails. Where progress is celebrated. For over a century,
-        we've empowered leaders in their ambitious pursuit to secure a brighter
-        world for all.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, quos.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid
+        pariatur natus perspiciatis. Repellat aliquid eos ea rem repellendus
+        sunt labore, voluptatem aliquam molestiae reiciendis, accusamus nobis
+        itaque consequatur iusto quisquam?
       </p>
     </div>
 
@@ -22,9 +23,17 @@
           Vice Chancellor's Address
         </h2>
         <p class="text-gray-700 mb-6 flex flex-col space-y-3">
-          <span>Bala blu generated youths umbreleda eba blu eneme super bala down-payment blu mpower umbreleda pdapc roasted recruit agbado blu bulaba different blu mpower corn corn bulaba blu highway bala electricty.</span>
+          <span
+            >Bala blu generated youths umbreleda eba blu eneme super bala
+            down-payment blu mpower umbreleda pdapc roasted recruit agbado blu
+            bulaba different blu mpower corn corn bulaba blu highway bala
+            electricty.</span
+          >
           <span>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error reprehenderit ea perspiciatis a minus, asperiores expedita perferendis rem pariatur eius natus reiciendis obcaecati nulla! Culpa aperiam fuga nihil cumque quasi.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
+            reprehenderit ea perspiciatis a minus, asperiores expedita
+            perferendis rem pariatur eius natus reiciendis obcaecati nulla!
+            Culpa aperiam fuga nihil cumque quasi.
           </span>
         </p>
         <div class="space-y-4 flex flex-col">
@@ -35,8 +44,7 @@
             <ChevronRightIcon
               class="ml-1 mt-0.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
             />
-            </Button
-          >
+          </Button>
         </div>
       </div>
 
@@ -61,14 +69,24 @@
         />
       </div>
       <div>
-        <h2 class="text-4xl font-bold text-green-600 mb-6">Faculty Dean's Address</h2>
+        <h2 class="text-4xl font-bold text-green-600 mb-6">
+          Faculty Dean's Address
+        </h2>
         <h3 class="text-2xl font-semibold mb-4">
           Elias Herrera, Social Entrepreneur
         </h3>
         <p class="text-gray-700 mb-6 flex flex-col space-y-3">
-          <span>Bala blu generated youths umbreleda eba blu eneme super bala down-payment blu mpower umbreleda pdapc roasted recruit agbado blu bulaba different blu mpower corn corn bulaba blu highway bala electricty.</span>
+          <span
+            >Bala blu generated youths umbreleda eba blu eneme super bala
+            down-payment blu mpower umbreleda pdapc roasted recruit agbado blu
+            bulaba different blu mpower corn corn bulaba blu highway bala
+            electricty.</span
+          >
           <span>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error reprehenderit ea perspiciatis a minus, asperiores expedita perferendis rem pariatur eius natus reiciendis obcaecati nulla! Culpa aperiam fuga nihil cumque quasi.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
+            reprehenderit ea perspiciatis a minus, asperiores expedita
+            perferendis rem pariatur eius natus reiciendis obcaecati nulla!
+            Culpa aperiam fuga nihil cumque quasi.
           </span>
         </p>
         <Button
@@ -78,8 +96,7 @@
           <ChevronRightIcon
             class="ml-1 mt-0.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
           />
-          </Button
-        >
+        </Button>
       </div>
     </div>
   </div>

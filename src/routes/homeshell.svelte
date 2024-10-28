@@ -7,7 +7,7 @@
   import { Button } from "$lib/components/ui/button/index.js";
   import { onMount } from "svelte";
   import { Label } from "$lib/components/ui/label/index.js";
-  
+
   let isScrolled = false;
 
   onMount(() => {
@@ -27,7 +27,7 @@
   class="w-full h-screen relative flex flex-col items-start justify-start select-none"
 >
   <nav
-    class="w-full h-20 z-50 flex items-center fixed transition-all duration-300 bg-white shadow-lg  justify-between"
+    class="w-full h-20 z-50 flex items-center fixed transition-all duration-300 bg-white shadow-lg justify-between"
     class:md:h-32={!isScrolled}
     class:md:h-20={isScrolled}
     class:md:bg-transparent={!isScrolled}
@@ -77,11 +77,12 @@
 
         <HoverCard.Root>
           <div
-          class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
+            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
             class:hover:text-white={isScrolled}
             class:hover:bg-green-600={isScrolled}
             class:hover:bg-white={!isScrolled}
-            class:hover:text-black={!isScrolled}>
+            class:hover:text-black={!isScrolled}
+          >
             <HoverCard.Trigger>
               <a href="/about">About Us</a>
             </HoverCard.Trigger>
@@ -90,11 +91,12 @@
 
         <HoverCard.Root>
           <div
-          class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
+            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
             class:hover:text-white={isScrolled}
             class:hover:bg-green-600={isScrolled}
             class:hover:bg-white={!isScrolled}
-            class:hover:text-black={!isScrolled}>
+            class:hover:text-black={!isScrolled}
+          >
             <HoverCard.Trigger>Academics</HoverCard.Trigger>
           </div>
           <HoverCard.Content>
@@ -104,11 +106,12 @@
 
         <HoverCard.Root>
           <div
-          class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
+            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
             class:hover:text-white={isScrolled}
             class:hover:bg-green-600={isScrolled}
             class:hover:bg-white={!isScrolled}
-            class:hover:text-black={!isScrolled}>
+            class:hover:text-black={!isScrolled}
+          >
             <HoverCard.Trigger>Admission</HoverCard.Trigger>
           </div>
           <HoverCard.Content>
@@ -118,22 +121,24 @@
 
         <HoverCard.Root>
           <div
-          class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
+            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
             class:hover:text-white={isScrolled}
             class:hover:bg-green-600={isScrolled}
             class:hover:bg-white={!isScrolled}
-            class:hover:text-black={!isScrolled}>
+            class:hover:text-black={!isScrolled}
+          >
             <HoverCard.Trigger>Updates</HoverCard.Trigger>
           </div>
         </HoverCard.Root>
 
         <HoverCard.Root>
           <div
-          class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
+            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
             class:hover:text-white={isScrolled}
             class:hover:bg-green-600={isScrolled}
             class:hover:bg-white={!isScrolled}
-            class:hover:text-black={!isScrolled}>
+            class:hover:text-black={!isScrolled}
+          >
             <HoverCard.Trigger>Contact Us</HoverCard.Trigger>
           </div>
           <HoverCard.Content>
@@ -293,7 +298,9 @@
                     </g>
                   </g></svg
                 >
-                <Label for="name" class="text-right text-md">About Us</Label>
+                <Label for="name" class="text-right text-md">
+                  <a href="/about">About Us</a>
+                </Label>
               </div>
               <div
                 class="flex justify-start items-center gap-4 w-full h-10 p-5 hover:bg-green-600 hover:text-white hover:rounded-md"

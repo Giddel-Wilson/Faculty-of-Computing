@@ -149,7 +149,7 @@
   </div>
 
   <button
-        class="fixed bottom-10 hover:opacity-100 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-transparent focus:text-green-500"
+        class="fixed z-50 bottom-10 hover:opacity-100 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-transparent focus:text-green-500"
         class:hidden={!isScrolled}
         on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
