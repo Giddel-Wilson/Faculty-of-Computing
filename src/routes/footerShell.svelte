@@ -4,8 +4,23 @@
     Youtube,
     Twitter,
     Instagram,
-    ArrowUp,
+    ChevronUpIcon,
   } from "lucide-svelte";
+  import { onMount } from "svelte";
+
+  let isScrolled = false;
+
+  onMount(() => {
+    const handleScroll = () => {
+      isScrolled = window.scrollY > 50;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
 </script>
 
 <footer class="bg-green-600 text-white py-12">
@@ -133,10 +148,11 @@
     </div>
   </div>
 
-  <!-- <button
-        class="fixed bottom-10 opacity-80 hover:opacity-100 right-4 bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-transparent hover:text-green-600 hover:border-green-600 focus:outline-none focus:ring-2 focus:ring-green-400"
+  <button
+        class="fixed bottom-10 hover:opacity-100 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-transparent focus:text-green-500"
+        class:hidden={!isScrolled}
         on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
-        <ArrowUp size={24} />
-      </button> -->
+        <ChevronUpIcon size={24} class="animate-bounce" />
+      </button>
 </footer>

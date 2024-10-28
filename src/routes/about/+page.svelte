@@ -1,18 +1,38 @@
 <script lang="ts">
   import * as Menubar from "$lib/components/ui/menubar";
-  // import * as Carousel from "$lib/components/ui/carousel/index.js";
   import * as Sheet from "$lib/components/ui/sheet/index.js";
   import * as HoverCard from "$lib/components/ui/hover-card";
-  import { ChevronRightIcon, ChevronDownIcon } from "lucide-svelte";
-  import { Button } from "$lib/components/ui/button/index.js";
-  import { onMount } from "svelte";
   import { Label } from "$lib/components/ui/label/index.js";
+  import { Button } from "$lib/components/ui/button";
+  import { Card } from "$lib/components/ui/card";
+  import { onMount } from "svelte";
+  import TimelineItem from "./timelineItem.svelte";
+  import Sidebar from "./sidebar.svelte";
   
+
   let isScrolled = false;
+
+  const timelineItems = [
+    {
+      year: "2010 - 2015",
+      name: "Prof. Ekanem Ikpi Braide",
+      image: "/placeholder.svg?height=150&width=150",
+    },
+    {
+      year: "2016 - 2021",
+      name: "Prof. Muhammad Sanusi Liman",
+      image: "/placeholder.svg?height=150&width=150",
+    },
+    {
+      year: "2022 - Till date",
+      name: "Prof. Shehu Abdul Rahman",
+      image: "/placeholder.svg?height=150&width=150",
+    },
+  ];
 
   onMount(() => {
     const handleScroll = () => {
-      isScrolled = window.scrollY > 50;
+      isScrolled = window.scrollY > 100;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -23,30 +43,23 @@
   });
 </script>
 
-<main
-  class="w-full h-screen relative flex flex-col items-start justify-start select-none"
->
+<div class="bg-gray-100 min-h-screen">
   <nav
-    class="w-full h-20 z-50 flex items-center fixed transition-all duration-300 bg-white shadow-lg  justify-between"
-    class:md:h-32={!isScrolled}
-    class:md:h-20={isScrolled}
-    class:md:bg-transparent={!isScrolled}
-    class:md:shadow-none={!isScrolled}
-    class:md:shadow-lg={isScrolled}
+    class="fixed top-0 w-full h-20 z-50 flex items-center transition-all duration-300 bg-white shadow-md justify-between"
   >
     <div
       class="logos h-full w-max md:w-1/5 flex items-center gap-1 md:gap-3 p-5 md:p-7"
     >
       <span
         ><enhanced:img
-          src="../assets/nacos.png"
+          src="/src/assets/nacos.png"
           alt=""
-          class="w-14 md:w-16 h-14 md:h-16"
+          class="w-14 md:w-14 h-14 md:h-14"
         ></enhanced:img></span
       >
       <span
         ><enhanced:img
-          src="../assets/uniport.png"
+          src="/src/assets/uniport.png"
           alt=""
           class="w-12 md:w-14 h-12 md:h-14 hidden lg:block"
         ></enhanced:img></span
@@ -59,17 +72,11 @@
     </div>
     <div
       class="h-full w-3/5 hidden lg:flex justify-center items-center gap-7 font-semibold text-xl transition-all duration-300"
-      class:text-black={isScrolled}
-      class:text-white={!isScrolled}
     >
-      <Menubar.Root class="bg-transparent">
+      <Menubar.Root class="bg-transparent py-5">
         <HoverCard.Root>
           <div
-            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
-            class:hover:text-white={isScrolled}
-            class:hover:bg-green-600={isScrolled}
-            class:hover:bg-white={!isScrolled}
-            class:hover:text-black={!isScrolled}
+            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer hover:text-white hover:bg-green-600"
           >
             <HoverCard.Trigger>Home</HoverCard.Trigger>
           </div>
@@ -77,11 +84,8 @@
 
         <HoverCard.Root>
           <div
-          class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
-            class:hover:text-white={isScrolled}
-            class:hover:bg-green-600={isScrolled}
-            class:hover:bg-white={!isScrolled}
-            class:hover:text-black={!isScrolled}>
+            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer hover:text-white hover:bg-green-600"
+          >
             <HoverCard.Trigger>
               <a href="/about">About Us</a>
             </HoverCard.Trigger>
@@ -90,11 +94,8 @@
 
         <HoverCard.Root>
           <div
-          class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
-            class:hover:text-white={isScrolled}
-            class:hover:bg-green-600={isScrolled}
-            class:hover:bg-white={!isScrolled}
-            class:hover:text-black={!isScrolled}>
+            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer hover:text-white hover:bg-green-600"
+          >
             <HoverCard.Trigger>Academics</HoverCard.Trigger>
           </div>
           <HoverCard.Content>
@@ -104,11 +105,8 @@
 
         <HoverCard.Root>
           <div
-          class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
-            class:hover:text-white={isScrolled}
-            class:hover:bg-green-600={isScrolled}
-            class:hover:bg-white={!isScrolled}
-            class:hover:text-black={!isScrolled}>
+            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer hover:text-white hover:bg-green-600"
+          >
             <HoverCard.Trigger>Admission</HoverCard.Trigger>
           </div>
           <HoverCard.Content>
@@ -118,22 +116,16 @@
 
         <HoverCard.Root>
           <div
-          class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
-            class:hover:text-white={isScrolled}
-            class:hover:bg-green-600={isScrolled}
-            class:hover:bg-white={!isScrolled}
-            class:hover:text-black={!isScrolled}>
+            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer hover:text-white hover:bg-green-600"
+          >
             <HoverCard.Trigger>Updates</HoverCard.Trigger>
           </div>
         </HoverCard.Root>
 
         <HoverCard.Root>
           <div
-          class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
-            class:hover:text-white={isScrolled}
-            class:hover:bg-green-600={isScrolled}
-            class:hover:bg-white={!isScrolled}
-            class:hover:text-black={!isScrolled}>
+            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer hover:text-white hover:bg-green-600"
+          >
             <HoverCard.Trigger>Contact Us</HoverCard.Trigger>
           </div>
           <HoverCard.Content>
@@ -178,14 +170,14 @@
                 <div class="flex items-center gap-2">
                   <span
                     ><enhanced:img
-                      src="../assets/nacos.png"
+                      src="/src/assets/nacos.png"
                       alt=""
                       class="w-14 md:w-16 h-14 md:h-16"
                     ></enhanced:img></span
                   >
                   <span
                     ><enhanced:img
-                      src="../assets/uniport.png"
+                      src="/src/assets/uniport.png"
                       alt=""
                       class="w-12 md:w-14 h-12 md:h-14"
                     ></enhanced:img></span
@@ -387,39 +379,56 @@
     </div>
   </nav>
 
-  <div class="absolute inset-0 flex flex-col items-start justify-center p-8">
-    <div class="bg-green-600 p-4 mb-4 w-1/5 h-24 md:h-44 absolute left-0"></div>
-    <h1
-      class="text-5xl md:text-8xl font-bold text-white leading-tight z-30 mt-20 md:mt-24"
-    >
-      ONE NACOS,<br />ONE NAIJA
-    </h1>
-    <div class="flex flex-wrap gap-4">
-      <Button
-        variant="outline"
-        class="bg-transparent text-white mt-5 hover:text-green-600 group inline-flex items-center justify-center"
-      >
-        LEARN MORE {" "}
-        <ChevronRightIcon
-          class="ml-1 mt-0.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-        />
-      </Button>
+  <main class="container mx-auto mt-28 px-4 mb-10">
+    <h1 class="text-4xl font-bold mb-4">Our History</h1>
+    <div class="flex flex-col md:flex-row gap-8">
+      <div class="flex-grow">
+        <Card class="p-6">
+          <h2 class="text-2xl font-bold mb-4">Brief history</h2>
+          <p class="mb-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+            nemo esse inventore minus pariatur eius impedit numquam rem
+            exercitationem! Dolores, impedit eaque. Molestiae beatae, ullam
+            explicabo ipsa non nulla nostrum? Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Ab corrupti nostrum eum doloremque id
+            blanditiis possimus nihil accusamus aperiam temporibus impedit ad,
+            in, nisi saepe qui quisquam doloribus rerum repellat.
+          </p>
+          <p class="mb-4">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas
+            cum adipisci deleniti neque laborum perferendis perspiciatis
+            possimus velit doloremque, dicta assumenda nemo libero aut, deserunt
+            ab reprehenderit ipsa fugit quos? Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Quod quibusdam, optio iste iure
+            placeat voluptatibus ullam laborum cumque, nulla minima at corrupti
+            similique, soluta quia neque totam iusto laboriosam ipsam.
+          </p>
+          <p class="mb-4">
+            Bala blu generated youth umbreleda eba blu eneme super bala
+            down-payment blu mpower umbreleda pdapc roasted recruit agbado blu
+            bulaba different blu mpower corn corn bulaba blu highway bala
+            electricty. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Nesciunt nemo esse inventore minus pariatur eius impedit numquam rem
+            exercitationem! Dolores, impedit eaque. Molestiae beatae, ullam
+            explicabo ipsa non nulla nostrum?
+          </p>
+          <!-- Add more paragraphs as needed -->
+        </Card>
+      </div>
+
+      <Sidebar />
     </div>
-  </div>
+  </main>
+</div>
 
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-    <button class="text-white group flex flex-col items-center">
-      <span>EXPLORE</span>
-      <ChevronDownIcon class="h-6 w-6 animate-bounce" />
-    </button>
-  </div>
+<footer class="bg-green-600 text-white p-4 mt-8 text-center">
+  <p class="mb-1 md:mb-0 text-center">
+    Copyright © NACOS UNIPORT 2024/2025 . All Right Reserved.
+  </p>
+</footer>
 
-  <div class="w-full h-screen flex items-center justify-center">
-    <enhanced:img
-      src="../assets/background2.jpg"
-      alt="#"
-      class="w-screen h-screen object-cover"
-    >
-    </enhanced:img>
-  </div>
-</main>
+<style lang="postcss">
+  :global(body) {
+    @apply bg-gray-100;
+  }
+</style>
