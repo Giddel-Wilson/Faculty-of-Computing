@@ -1,34 +1,16 @@
 <script lang="ts">
+  import { Button } from "$lib/components/ui/button";
+  import { Input } from "$lib/components/ui/input";
+  import { Textarea } from "$lib/components/ui/textarea";
+  import { Label } from "$lib/components/ui/label/index.js";
+  import { onMount } from "svelte";
   import * as Menubar from "$lib/components/ui/menubar";
   import * as Sheet from "$lib/components/ui/sheet/index.js";
   import * as HoverCard from "$lib/components/ui/hover-card";
-  import { Label } from "$lib/components/ui/label/index.js";
-  import { Button } from "$lib/components/ui/button";
-  import { Card } from "$lib/components/ui/card";
-  import { onMount } from "svelte";
-  import TimelineItem from "./timelineItem.svelte";
-  import Sidebar from "./sidebar.svelte";
-  
 
   let isScrolled = false;
 
-  const timelineItems = [
-    {
-      year: "2010 - 2015",
-      name: "Prof. Ekanem Ikpi Braide",
-      image: "/placeholder.svg?height=150&width=150",
-    },
-    {
-      year: "2016 - 2021",
-      name: "Prof. Muhammad Sanusi Liman",
-      image: "/placeholder.svg?height=150&width=150",
-    },
-    {
-      year: "2022 - Till date",
-      name: "Prof. Shehu Abdul Rahman",
-      image: "/placeholder.svg?height=150&width=150",
-    },
-  ];
+
 
   onMount(() => {
     const handleScroll = () => {
@@ -43,8 +25,9 @@
   });
 </script>
 
-<div class="bg-gray-100 min-h-screen">
-  <nav
+
+<div class="min-h-screen bg-gray-100">
+    <nav
     class="fixed top-0 w-full h-20 z-50 flex items-center transition-all duration-300 bg-white shadow-md justify-between"
   >
     <div
@@ -129,7 +112,7 @@
             class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer hover:text-white hover:bg-green-600"
           >
             <HoverCard.Trigger>
-              <a href="/contact">Contact Us</a>
+                <a href="/contact">Contact Us</a>
             </HoverCard.Trigger>
           </div>
           <HoverCard.Content>
@@ -256,7 +239,7 @@
                 </a>
               </div>
               <div>
-                <a href="/about"
+                <a href="./"
                   class="flex justify-start items-center gap-4 w-full h-10 p-5 hover:bg-green-600 hover:text-white hover:rounded-md"
                 >
                   <svg
@@ -388,50 +371,89 @@
     </div>
   </nav>
 
-  <main class="container mx-auto mt-28 px-4 mb-10">
-    <h1 class="text-4xl font-bold mb-4">Our History</h1>
-    <div class="flex flex-col md:flex-row gap-8">
-      <div class="flex-grow">
-        <Card class="p-6">
-          <h2 class="text-2xl font-bold mb-4">Brief history</h2>
-          <p class="mb-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-            nemo esse inventore minus pariatur eius impedit numquam rem
-            exercitationem! Dolores, impedit eaque. Molestiae beatae, ullam
-            explicabo ipsa non nulla nostrum? Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit. Ab corrupti nostrum eum doloremque id
-            blanditiis possimus nihil accusamus aperiam temporibus impedit ad,
-            in, nisi saepe qui quisquam doloribus rerum repellat.
-          </p>
-          <p class="mb-4">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas
-            cum adipisci deleniti neque laborum perferendis perspiciatis
-            possimus velit doloremque, dicta assumenda nemo libero aut, deserunt
-            ab reprehenderit ipsa fugit quos? Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Quod quibusdam, optio iste iure
-            placeat voluptatibus ullam laborum cumque, nulla minima at corrupti
-            similique, soluta quia neque totam iusto laboriosam ipsam.
-          </p>
-          <p class="mb-4">
-            Bala blu generated youth umbreleda eba blu eneme super bala
-            down-payment blu mpower umbreleda pdapc roasted recruit agbado blu
-            bulaba different blu mpower corn corn bulaba blu highway bala
-            electricty. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Nesciunt nemo esse inventore minus pariatur eius impedit numquam rem
-            exercitationem! Dolores, impedit eaque. Molestiae beatae, ullam
-            explicabo ipsa non nulla nostrum?
-          </p>
-          <!-- Add more paragraphs as needed -->
-        </Card>
+  <div class="relative overflow-hidden mt-20">
+    <div
+      class="relative bg-green-600 h-64 flex items-center justify-center text-white bg-opacity-40 z-30"
+    >
+      <div
+        class="absolute inset-0 bg-cover bg-center"
+        style="background-image: url('/path-to-your-background-image.jpg'); filter: blur(4px);"
+      ></div>
+      <div class="relative z-10 text-center px-4 hidden md:block">
+        <h1 class="text-4xl font-bold mb-2">
+          Restons Connectés : Contactez-nous pour
+        </h1>
+        <h2 class="text-3xl font-semibold">
+          toute question ou demande d'information
+        </h2>
+      </div>
+    </div>
+    <div class="absolute inset-0 z-20">
+      <enhanced:img
+        src="/src/assets/background2.jpg"
+        alt="#"
+        class="w-full h-full object-cover"
+      >
+      </enhanced:img>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-bold text-center mb-12">
+      CONTACT US
+      <span class="block w-28 h-2 bg-green-600 mx-auto mt-2"></span>
+    </h2>
+
+    <div class="flex flex-col md:flex-row gap-12">
+      <div class="flex-1">
+        <form class="space-y-6">
+          <Input type="text" placeholder="Your Name" />
+          <Input type="email" placeholder="Email Address" />
+          <Input type="tel" placeholder="Phone Number" />
+          <Textarea placeholder="Input Message" rows="6" />
+          <Button class="w-full bg-green-600 hover:bg-green-700 text-white"
+            >Envoyer</Button
+          >
+        </form>
       </div>
 
-      <Sidebar />
+      <div class="flex-1 space-y-6">
+        <div class="flex gap-3 text-base">
+          <h3 class="font-semibold text-gray-700">Call:</h3>
+          <p class="text-green-600">+234 *** *** ***</p>
+        </div>
+        <div class="flex gap-3 text-base">
+          <h3 class="font-semibold text-gray-700">Email:</h3>
+          <p class="text-green-600">offialFacultyEmail@mail.com</p>
+        </div>
+        <div class="flex gap-3 text-base">
+          <h3 class="font-semibold text-gray-700">Location:</h3>
+          <p class="text-green-600">
+            Lorem ipsum dolor sit. Nihil, dolorem!<br />
+            amet consectetur, University of Port Harcourt,<br />
+            Rivers State, Nigeria.
+          </p>
+        </div>
+        <div class="h-64 bg-gray-300">
+          <!-- Replace this div with an actual map component or embed -->
+          <iframe
+            class="w-full h-full object-cover"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6685.512078017782!2d6.911733817848235!3d4.901252490501138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069da7f7bf8c433%3A0x6665c08e429606dd!2sUniversity%20of%20Port%20Harcourt!5e0!3m2!1sen!2sng!4v1730213426590!5m2!1sen!2sng"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
     </div>
-  </main>
-</div>
+  </div>
 
-<footer class="bg-green-600 text-white p-4 mt-8 text-center">
-  <p class="mb-1 md:mb-0 text-center">
-    Copyright © NACOS UNIPORT 2024/2025 . All Right Reserved.
-  </p>
-</footer>
+  <footer class="bg-green-600 text-white p-4 mt-8 text-center">
+    <p class="mb-1 md:mb-0 text-center">
+      Copyright © NACOS UNIPORT 2024/2025 . All Right Reserved.
+    </p>
+  </footer>
+</div>

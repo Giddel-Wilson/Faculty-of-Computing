@@ -5,11 +5,9 @@
     const sidebarItems = [
       'About Overview',
       'Our Mission',
-      'Management',
       'Our History',
+      'Management',
       'Frequently Asked Questions',
-      'Awards & Accolades',
-      'International Linkages'
     ];
     
     const caseStudies = [
@@ -24,7 +22,7 @@
         <h2 class="text-2xl font-bold mb-4">About Us</h2>
         <ul class="space-y-2">
           {#each sidebarItems as item}
-            <li class="hover:bg-gray-100 p-2 rounded">{item}</li>
+            <li class="hover:bg-green-600 hover:text-white hover:rounded-lg hover:cursor-pointer p-2 rounded">{item}</li>
           {/each}
         </ul>
       </Card>
