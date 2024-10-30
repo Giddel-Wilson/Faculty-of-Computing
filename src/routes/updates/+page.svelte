@@ -1,18 +1,17 @@
 <script lang="ts">
+  import { Button } from "$lib/components/ui/button";
+  import { Card, CardContent } from "$lib/components/ui/card";
+  import { Label } from "$lib/components/ui/label/index.js";
+  import { onMount } from "svelte";
   import * as Menubar from "$lib/components/ui/menubar";
-  // import * as Carousel from "$lib/components/ui/carousel/index.js";
   import * as Sheet from "$lib/components/ui/sheet/index.js";
   import * as HoverCard from "$lib/components/ui/hover-card";
-  import { ChevronRightIcon, ChevronDownIcon } from "lucide-svelte";
-  import { Button } from "$lib/components/ui/button/index.js";
-  import { onMount } from "svelte";
-  import { Label } from "$lib/components/ui/label/index.js";
 
   let isScrolled = false;
 
   onMount(() => {
     const handleScroll = () => {
-      isScrolled = window.scrollY > 50;
+      isScrolled = window.scrollY > 100;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -21,32 +20,55 @@
       window.removeEventListener("scroll", handleScroll);
     };
   });
+
+  const newsItems = [
+    {
+      category: "WOMEN'S VOLLEYBALL",
+      title: "Lions Face Cougars Thursday at Gersten Pavilion",
+      image: "/placeholder.svg?height=400&width=600",
+    },
+    {
+      category: "MEN'S GOLF",
+      title: "Snyder's Five Birdies in Final Round Lands Sophomore in Top-15.",
+      image: "/placeholder.svg?height=300&width=400",
+    },
+    {
+      category: "MEN'S GOLF",
+      title: "Darkness Halts Second Round at The Preserve",
+      image: "/placeholder.svg?height=300&width=400",
+    },
+    {
+      category: "WOMEN'S VOLLEYBALL",
+      title:
+        "Lawson and Hayes Shine as Lions Claim WCC Defensive and Offensive Player of the Week Titles",
+      image: "/placeholder.svg?height=300&width=400",
+    },
+    {
+      category: "WOMEN'S SOCCER",
+      title: "Dobbs Breaks Single Season Scoring Record in Portland Draw",
+      image: "/placeholder.svg?height=300&width=400",
+    },
+  ];
 </script>
 
-<main
-  class="w-full h-screen relative flex flex-col items-start justify-start select-none"
->
+<div class="flex flex-col min-h-screen">
+  <!-- Navbar -->
   <nav
-    class="w-full h-20 z-50 flex items-center fixed transition-all duration-300 bg-white shadow-lg justify-between"
-    class:md:h-32={!isScrolled}
-    class:md:h-20={isScrolled}
-    class:md:bg-transparent={!isScrolled}
-    class:md:shadow-none={!isScrolled}
-    class:md:shadow-lg={isScrolled}
+    class="fixed top-0 w-full h-20 z-50 flex items-center transition-all duration-300 bg-white shadow-md justify-between"
   >
     <div
       class="logos h-full w-max md:w-1/5 flex items-center gap-1 md:gap-3 p-5 md:p-7"
     >
       <span
         ><enhanced:img
-          src="../assets/nacos.png"
+          src="/src/assets/nacos.png"
           alt=""
-          class="w-14 md:w-16 h-14 md:h-16"
+          class="w-14 md:w-14 h-14 md:h-14"
         ></enhanced:img></span
       >
       <span
         ><enhanced:img
-          src="../assets/uniport.png"
+          src="/src/assets/uniport.png"
           alt=""
           class="w-12 md:w-14 h-12 md:h-14 hidden lg:block"
         ></enhanced:img></span
@@ -59,31 +81,21 @@
     </div>
     <div
       class="h-full w-3/5 hidden lg:flex justify-center items-center gap-7 font-semibold text-xl transition-all duration-300"
-      class:text-black={isScrolled}
-      class:text-white={!isScrolled}
     >
-      <Menubar.Root class="bg-transparent">
+      <Menubar.Root class="bg-transparent py-5">
         <HoverCard.Root>
           <div
-            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
-            class:hover:text-white={isScrolled}
-            class:hover:bg-green-600={isScrolled}
-            class:hover:bg-white={!isScrolled}
-            class:hover:text-black={!isScrolled}
+            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer hover:text-white hover:bg-green-600"
           >
             <HoverCard.Trigger>
-              <a href="./">Home</a>
+              <a href="../">Home</a>
             </HoverCard.Trigger>
           </div>
         </HoverCard.Root>
 
         <HoverCard.Root>
           <div
-            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
-            class:hover:text-white={isScrolled}
-            class:hover:bg-green-600={isScrolled}
-            class:hover:bg-white={!isScrolled}
-            class:hover:text-black={!isScrolled}
+            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer hover:text-white hover:bg-green-600"
           >
             <HoverCard.Trigger>
               <a href="/about">About Us</a>
@@ -93,11 +105,7 @@
 
         <HoverCard.Root>
           <div
-            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
-            class:hover:text-white={isScrolled}
-            class:hover:bg-green-600={isScrolled}
-            class:hover:bg-white={!isScrolled}
-            class:hover:text-black={!isScrolled}
+            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer hover:text-white hover:bg-green-600"
           >
             <HoverCard.Trigger>Academics</HoverCard.Trigger>
           </div>
@@ -108,11 +116,7 @@
 
         <HoverCard.Root>
           <div
-            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
-            class:hover:text-white={isScrolled}
-            class:hover:bg-green-600={isScrolled}
-            class:hover:bg-white={!isScrolled}
-            class:hover:text-black={!isScrolled}
+            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer hover:text-white hover:bg-green-600"
           >
             <HoverCard.Trigger>Admission</HoverCard.Trigger>
           </div>
@@ -123,11 +127,7 @@
 
         <HoverCard.Root>
           <div
-            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
-            class:hover:text-white={isScrolled}
-            class:hover:bg-green-600={isScrolled}
-            class:hover:bg-white={!isScrolled}
-            class:hover:text-black={!isScrolled}
+            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer hover:text-white hover:bg-green-600"
           >
             <HoverCard.Trigger>
               <a href="/updates">Updates</a>
@@ -137,14 +137,10 @@
 
         <HoverCard.Root>
           <div
-            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer"
-            class:hover:text-white={isScrolled}
-            class:hover:bg-green-600={isScrolled}
-            class:hover:bg-white={!isScrolled}
-            class:hover:text-black={!isScrolled}
+            class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer hover:text-white hover:bg-green-600"
           >
             <HoverCard.Trigger>
-              <a href="/contact"> Contact Us </a>
+              <a href="/contact">Contact Us</a>
             </HoverCard.Trigger>
           </div>
           <HoverCard.Content>
@@ -189,14 +185,14 @@
                 <div class="flex items-center gap-2">
                   <span
                     ><enhanced:img
-                      src="../assets/nacos.png"
+                      src="/src/assets/nacos.png"
                       alt=""
                       class="w-14 md:w-16 h-14 md:h-16"
                     ></enhanced:img></span
                   >
                   <span
                     ><enhanced:img
-                      src="../assets/uniport.png"
+                      src="/src/assets/uniport.png"
                       alt=""
                       class="w-12 md:w-14 h-12 md:h-14"
                     ></enhanced:img></span
@@ -272,7 +268,7 @@
               </div>
               <div>
                 <a
-                  href="/about"
+                  href="./"
                   class="flex justify-start items-center gap-4 w-full h-10 p-5 hover:bg-green-600 hover:text-white hover:rounded-md"
                 >
                   <svg
@@ -363,43 +359,40 @@
                 >
                 <Label for="name" class="text-right text-md">Addmission</Label>
               </div>
-              <div>
-                <a
-                  href="/updates"
-                  class="flex justify-start items-center gap-4 w-full h-10 p-5 hover:bg-green-600 hover:text-white hover:rounded-md"
+              <div
+                class="flex justify-start items-center gap-4 w-full h-10 p-5 hover:bg-green-600 hover:text-white hover:rounded-md"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="#6b6b6b"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  stroke="#6b6b6b"
+                  ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g><g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M16 2H8C7.46957 2 6.96086 2.21071 6.58579 2.58579C6.21071 2.96086 6 3.46957 6 4H15V9H20V20H6C6 20.5304 6.21071 21.0391 6.58579 21.4142C6.96086 21.7893 7.46957 22 8 22H20C20.5304 22 21.0391 21.7893 21.4142 21.4142C21.7893 21.0391 22 20.5304 22 20V8L16 2Z"
+                    ></path>
+                    <path
+                      d="M11.3245 14.4883L12.6906 15.822V16.4942H2V15.822L3.3553 14.4883V11.1597C3.28833 10.2186 3.55162 9.28363 4.09982 8.51576C4.64802 7.74789 5.44681 7.1952 6.35864 6.95288V6.4975C6.35864 6.23295 6.46373 5.97923 6.6508 5.79216C6.83787 5.60509 7.09159 5.5 7.35614 5.5C7.62069 5.5 7.87441 5.60509 8.06148 5.79216C8.24855 5.97923 8.35364 6.23295 8.35364 6.4975V6.95288C9.25835 7.20335 10.0485 7.75916 10.59 8.52597C11.1315 9.29278 11.391 10.2233 11.3245 11.1597V14.4883Z"
+                    ></path>
+                    <path
+                      d="M8.26662 18.1094C8.01652 18.3595 7.67731 18.5 7.32361 18.5C6.96992 18.5 6.63071 18.3595 6.3806 18.1094C6.1305 17.8593 5.99 17.5201 5.99 17.1664H8.65722C8.65722 17.5201 8.51672 17.8593 8.26662 18.1094Z"
+                    ></path>
+                  </g></svg
                 >
-                  <svg
-                    class="w-6 h-6"
-                    fill="#6b6b6b"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    stroke="#6b6b6b"
-                    ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
-                      id="SVGRepo_tracerCarrier"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></g><g id="SVGRepo_iconCarrier">
-                      <path
-                        d="M16 2H8C7.46957 2 6.96086 2.21071 6.58579 2.58579C6.21071 2.96086 6 3.46957 6 4H15V9H20V20H6C6 20.5304 6.21071 21.0391 6.58579 21.4142C6.96086 21.7893 7.46957 22 8 22H20C20.5304 22 21.0391 21.7893 21.4142 21.4142C21.7893 21.0391 22 20.5304 22 20V8L16 2Z"
-                      ></path>
-                      <path
-                        d="M11.3245 14.4883L12.6906 15.822V16.4942H2V15.822L3.3553 14.4883V11.1597C3.28833 10.2186 3.55162 9.28363 4.09982 8.51576C4.64802 7.74789 5.44681 7.1952 6.35864 6.95288V6.4975C6.35864 6.23295 6.46373 5.97923 6.6508 5.79216C6.83787 5.60509 7.09159 5.5 7.35614 5.5C7.62069 5.5 7.87441 5.60509 8.06148 5.79216C8.24855 5.97923 8.35364 6.23295 8.35364 6.4975V6.95288C9.25835 7.20335 10.0485 7.75916 10.59 8.52597C11.1315 9.29278 11.391 10.2233 11.3245 11.1597V14.4883Z"
-                      ></path>
-                      <path
-                        d="M8.26662 18.1094C8.01652 18.3595 7.67731 18.5 7.32361 18.5C6.96992 18.5 6.63071 18.3595 6.3806 18.1094C6.1305 17.8593 5.99 17.5201 5.99 17.1664H8.65722C8.65722 17.5201 8.51672 17.8593 8.26662 18.1094Z"
-                      ></path>
-                    </g></svg
-                  >
-                  <Label for="name" class="text-right text-md">Updates</Label>
-                </a>
+                <Label for="name" class="text-right text-md">Updates</Label>
               </div>
             </div>
           </div>
           <Sheet.Footer>
             <Sheet.Close asChild let:builder>
-              <Button builders={[builder]} type="submit" class="bg-green-600">
-                <a href="/contact" class="w-full h-full"> Contact Us </a>
-              </Button>
+              <Button builders={[builder]} type="submit" class="bg-green-600"
+                >Contact Us</Button
+              >
             </Sheet.Close>
           </Sheet.Footer>
         </Sheet.Content>
@@ -407,39 +400,126 @@
     </div>
   </nav>
 
-  <div class="absolute inset-0 flex flex-col items-start justify-center p-8">
-    <div class="bg-green-600 p-4 mb-4 w-1/5 h-24 md:h-44 absolute left-0"></div>
-    <h1
-      class="text-5xl md:text-8xl font-bold text-white leading-tight z-30 mt-20 md:mt-24"
-    >
-      ONE NACOS,<br />ONE NAIJA
-    </h1>
-    <div class="flex flex-wrap gap-4">
-      <Button
-        variant="outline"
-        class="bg-transparent text-white mt-5 hover:text-green-600 group inline-flex items-center justify-center"
-      >
-        LEARN MORE {" "}
-        <ChevronRightIcon
-          class="ml-1 mt-0.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-        />
-      </Button>
+  <!-- Hero Section -->
+  <section
+    class="relative h-[600px] bg-cover bg-center flex items-center justify-center"
+    style="background-image: url('/placeholder.svg?height=600&width=1200')"
+  >
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative z-10 text-center">
+      <h1 class="text-white text-7xl font-bold mb-8">FACULTY UPDATES</h1>
+      <div class="flex flex-wrap justify-center gap-4">
+        <Button
+          variant="outline"
+          class="bg-transparent text-white border-white hover:bg-white hover:text-green-600 hover:font-semibold"
+        >
+          UNIPORT.EDU
+        </Button>
+        <Button
+          variant="outline"
+          class="bg-transparent text-white border-white hover:bg-white hover:text-green-600 hover:font-semibold"
+        >
+          UPCOMING EVENTS
+        </Button>
+        <Button
+          variant="outline"
+          class="bg-transparent text-white border-white hover:bg-white hover:text-green-600 hover:font-semibold"
+        >
+          SIGN UP FOR NEWSLETTER
+        </Button>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-    <button class="text-white group flex flex-col items-center">
-      <span>EXPLORE</span>
-      <ChevronDownIcon class="h-6 w-6 animate-bounce" />
-    </button>
-  </div>
+  <!-- News Section -->
+  <section class="container mx-auto px-4 py-12">
+    <div class="flex flex-wrap gap-8">
+      <!-- Main News Item -->
+      <div class="flex-1 min-w-[300px]">
+        <Card>
+          <CardContent class="p-0">
+            <img
+              src={newsItems[0].image}
+              alt=""
+              class="w-full h-[400px] object-cover"
+            />
+            <div class="p-6">
+              <p class="text-sm text-gray-600 mb-2">{newsItems[0].category}</p>
+              <h2 class="text-2xl font-bold text-green-600">
+                {newsItems[0].title}
+              </h2>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
 
-  <div class="w-full h-screen flex items-center justify-center">
-    <enhanced:img
-      src="../assets/background2.jpg"
-      alt="#"
-      class="w-screen h-screen object-cover"
+      <!-- Athletic Director Card -->
+      <div class="w-full md:w-[400px]">
+        <Card class="bg-green-600 text-white h-full">
+          <CardContent class="p-6">
+            <div class="flex flex-col items-center text-center">
+              <img
+                src="/placeholder.svg?height=200&width=200"
+                alt="Athletic Director"
+                class="rounded-full w-32 h-32 mb-4"
+              />
+              <p class="mb-4 text-sm">
+                We are very excited about the momentum our donors have created
+                for LMU Athletics with another record-breaking year. These
+                generous revenue-breaking years are a testament to the belief in
+                our student athletes, coaches, and staff.
+              </p>
+              <h3 class="text-xl font-bold">Craig Pintens</h3>
+              <p class="text-sm">ATHLETIC DIRECTOR</p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+
+    <!-- Secondary News Grid -->
+    <div class="flex flex-wrap gap-8 mt-8">
+      {#each newsItems.slice(1) as item}
+        <Card class="flex-1 min-w-[300px]">
+          <CardContent class="p-0">
+            <img
+              src={item.image}
+              alt=""
+              class="w-full h-[200px] object-cover"
+            />
+            <div class="p-4">
+              <p class="text-sm text-gray-600 mb-2">{item.category}</p>
+              <h3 class="font-bold text-green-600">{item.title}</h3>
+            </div>
+          </CardContent>
+        </Card>
+      {/each}
+    </div>
+  </section>
+
+  <!-- News Archive Button -->
+  <div class="text-center py-8">
+    <Button
+      variant="outline"
+      class="border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
     >
-    </enhanced:img>
+      NEWS ARCHIVES
+    </Button>
   </div>
-</main>
+
+  <!-- Footer Skyline -->
+  <footer class="mt-auto">
+    <div class="h-[200px] bg-gray-100 relative">
+      <div class="absolute bottom-0 w-full">
+        <img
+          src="/placeholder.svg?height=100&width=1200"
+          alt="City Skyline"
+          class="w-full"
+        />
+        <p class="mb-1 md:mb-0 text-center bg-green-600 text-white p-4 mt-8">
+          Copyright © NACOS UNIPORT 2024/2025 . All Right Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>

@@ -6,29 +6,10 @@
   import { Button } from "$lib/components/ui/button";
   import { Card } from "$lib/components/ui/card";
   import { onMount } from "svelte";
-  import TimelineItem from "./timelineItem.svelte";
   import Sidebar from "./sidebar.svelte";
   
 
   let isScrolled = false;
-
-  const timelineItems = [
-    {
-      year: "2010 - 2015",
-      name: "Prof. Ekanem Ikpi Braide",
-      image: "/placeholder.svg?height=150&width=150",
-    },
-    {
-      year: "2016 - 2021",
-      name: "Prof. Muhammad Sanusi Liman",
-      image: "/placeholder.svg?height=150&width=150",
-    },
-    {
-      year: "2022 - Till date",
-      name: "Prof. Shehu Abdul Rahman",
-      image: "/placeholder.svg?height=150&width=150",
-    },
-  ];
 
   onMount(() => {
     const handleScroll = () => {
@@ -120,7 +101,9 @@
           <div
             class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer hover:text-white hover:bg-green-600"
           >
-            <HoverCard.Trigger>Updates</HoverCard.Trigger>
+          <HoverCard.Trigger>
+            <a href="/updates">Updates</a>
+          </HoverCard.Trigger>
           </div>
         </HoverCard.Root>
 
@@ -347,40 +330,42 @@
                 >
                 <Label for="name" class="text-right text-md">Addmission</Label>
               </div>
-              <div
-                class="flex justify-start items-center gap-4 w-full h-10 p-5 hover:bg-green-600 hover:text-white hover:rounded-md"
-              >
-                <svg
-                  class="w-6 h-6"
-                  fill="#6b6b6b"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                  stroke="#6b6b6b"
-                  ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
-                    id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></g><g id="SVGRepo_iconCarrier">
-                    <path
-                      d="M16 2H8C7.46957 2 6.96086 2.21071 6.58579 2.58579C6.21071 2.96086 6 3.46957 6 4H15V9H20V20H6C6 20.5304 6.21071 21.0391 6.58579 21.4142C6.96086 21.7893 7.46957 22 8 22H20C20.5304 22 21.0391 21.7893 21.4142 21.4142C21.7893 21.0391 22 20.5304 22 20V8L16 2Z"
-                    ></path>
-                    <path
-                      d="M11.3245 14.4883L12.6906 15.822V16.4942H2V15.822L3.3553 14.4883V11.1597C3.28833 10.2186 3.55162 9.28363 4.09982 8.51576C4.64802 7.74789 5.44681 7.1952 6.35864 6.95288V6.4975C6.35864 6.23295 6.46373 5.97923 6.6508 5.79216C6.83787 5.60509 7.09159 5.5 7.35614 5.5C7.62069 5.5 7.87441 5.60509 8.06148 5.79216C8.24855 5.97923 8.35364 6.23295 8.35364 6.4975V6.95288C9.25835 7.20335 10.0485 7.75916 10.59 8.52597C11.1315 9.29278 11.391 10.2233 11.3245 11.1597V14.4883Z"
-                    ></path>
-                    <path
-                      d="M8.26662 18.1094C8.01652 18.3595 7.67731 18.5 7.32361 18.5C6.96992 18.5 6.63071 18.3595 6.3806 18.1094C6.1305 17.8593 5.99 17.5201 5.99 17.1664H8.65722C8.65722 17.5201 8.51672 17.8593 8.26662 18.1094Z"
-                    ></path>
-                  </g></svg
+              <div>
+                <a
+                  href="/updates"
+                  class="flex justify-start items-center gap-4 w-full h-10 p-5 hover:bg-green-600 hover:text-white hover:rounded-md"
                 >
-                <Label for="name" class="text-right text-md">Updates</Label>
+                  <svg
+                    class="w-6 h-6"
+                    fill="#6b6b6b"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    stroke="#6b6b6b"
+                    ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></g><g id="SVGRepo_iconCarrier">
+                      <path
+                        d="M16 2H8C7.46957 2 6.96086 2.21071 6.58579 2.58579C6.21071 2.96086 6 3.46957 6 4H15V9H20V20H6C6 20.5304 6.21071 21.0391 6.58579 21.4142C6.96086 21.7893 7.46957 22 8 22H20C20.5304 22 21.0391 21.7893 21.4142 21.4142C21.7893 21.0391 22 20.5304 22 20V8L16 2Z"
+                      ></path>
+                      <path
+                        d="M11.3245 14.4883L12.6906 15.822V16.4942H2V15.822L3.3553 14.4883V11.1597C3.28833 10.2186 3.55162 9.28363 4.09982 8.51576C4.64802 7.74789 5.44681 7.1952 6.35864 6.95288V6.4975C6.35864 6.23295 6.46373 5.97923 6.6508 5.79216C6.83787 5.60509 7.09159 5.5 7.35614 5.5C7.62069 5.5 7.87441 5.60509 8.06148 5.79216C8.24855 5.97923 8.35364 6.23295 8.35364 6.4975V6.95288C9.25835 7.20335 10.0485 7.75916 10.59 8.52597C11.1315 9.29278 11.391 10.2233 11.3245 11.1597V14.4883Z"
+                      ></path>
+                      <path
+                        d="M8.26662 18.1094C8.01652 18.3595 7.67731 18.5 7.32361 18.5C6.96992 18.5 6.63071 18.3595 6.3806 18.1094C6.1305 17.8593 5.99 17.5201 5.99 17.1664H8.65722C8.65722 17.5201 8.51672 17.8593 8.26662 18.1094Z"
+                      ></path>
+                    </g></svg
+                  >
+                  <Label for="name" class="text-right text-md">Updates</Label>
+                </a>
               </div>
-            </div>
           </div>
           <Sheet.Footer>
             <Sheet.Close asChild let:builder>
-              <Button builders={[builder]} type="submit" class="bg-green-600"
-                >Contact Us</Button
-              >
+              <Button builders={[builder]} type="submit" class="bg-green-600">
+                <a href="/contact" class="w-full h-full">Contact Us </a>
+              </Button>
             </Sheet.Close>
           </Sheet.Footer>
         </Sheet.Content>

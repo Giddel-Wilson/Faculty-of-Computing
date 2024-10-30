@@ -23,7 +23,7 @@
           />
           <div class="p-4">
             <h3 class="text-xs uppercase text-gray-500">Campus News</h3>
-            <h2 class="text-lg font-semibold text-red-600">
+            <h2 class="text-lg font-semibold text-green-600">
               Law School's Diversity Week Features Faculty and Alumni Speakers
             </h2>
           </div>
@@ -37,7 +37,7 @@
           />
           <div class="p-4">
             <h3 class="text-xs uppercase text-gray-500">Philanthropy</h3>
-            <h2 class="text-lg font-semibold text-red-600">
+            <h2 class="text-lg font-semibold text-green-600">
               R.S.H.M./C.S.J. Celebrate 50th Anniversary of Uniport Merger with $1M
               Gifts
             </h2>
@@ -52,7 +52,7 @@
           />
           <div class="p-4">
             <h3 class="text-xs uppercase text-gray-500">Campus News</h3>
-            <h2 class="text-lg font-semibold text-red-600">
+            <h2 class="text-lg font-semibold text-green-600">
               Uniport Awarded 2024 Higher Education Excellence in Diversity Award
             </h2>
           </div>
@@ -121,7 +121,7 @@
             />
             <div class="p-4">
               <h3 class="text-xs uppercase text-gray-500">Faculty News</h3>
-              <h2 class="text-xl font-semibold text-red-600">
+              <h2 class="text-xl font-semibold text-green-600">
                 Playwright Joins CFA Theatre Arts as Assistant Professor
               </h2>
               <p class="mt-2">

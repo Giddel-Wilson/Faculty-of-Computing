@@ -103,7 +103,9 @@
           <div
             class="flex cursor-default select-none items-center rounded-sm px-3 py-1.5 text-sm font-medium outline-none hover:cursor-pointer hover:text-white hover:bg-green-600"
           >
-            <HoverCard.Trigger>Updates</HoverCard.Trigger>
+          <HoverCard.Trigger>
+            <a href="/updates">Updates</a>
+        </HoverCard.Trigger>
           </div>
         </HoverCard.Root>
 
@@ -412,7 +414,7 @@
           <Input type="tel" placeholder="Phone Number" />
           <Textarea placeholder="Input Message" rows="6" />
           <Button class="w-full bg-green-600 hover:bg-green-700 text-white"
-            >Envoyer</Button
+            >Submit</Button
           >
         </form>
       </div>
