@@ -28,14 +28,14 @@
 >
   <nav
     class="w-full h-20 z-50 flex items-center fixed transition-all duration-300 bg-white shadow-lg justify-between"
-    class:md:h-32={!isScrolled}
-    class:md:h-20={isScrolled}
-    class:md:bg-transparent={!isScrolled}
-    class:md:shadow-none={!isScrolled}
-    class:md:shadow-lg={isScrolled}
+    class:lg:h-32={!isScrolled}
+    class:lg:h-20={isScrolled}
+    class:lg:bg-transparent={!isScrolled}
+    class:lg:shadow-none={!isScrolled}
+    class:lg:shadow-lg={isScrolled}
   >
     <div
-      class="logos h-full w-max md:w-1/5 flex items-center gap-1 md:gap-3 p-5 md:p-7"
+      class="logos h-full w-max lg:w-1/5 flex items-center gap-1 lg:gap-3 p-5 lg:p-7"
     >
       <span
         ><enhanced:img
@@ -52,7 +52,7 @@
         ></enhanced:img></span
       >
       <span>
-        <h1 class="text-xl font-bold text-green-600 block md:hidden">
+        <h1 class="text-xl font-bold text-green-600 block lg:hidden">
           NACOS <br /> UNIPORT
         </h1></span
       >
@@ -158,7 +158,7 @@
         <Sheet.Trigger asChild let:builder>
           <Button
             builders={[builder]}
-            class="bg-transparent w-max h-max block md:hidden focus:bg-transparent"
+            class="bg-transparent w-max h-max block lg:hidden focus:bg-transparent"
           >
             <svg
               class="w-10 h-10"
