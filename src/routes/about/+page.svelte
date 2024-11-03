@@ -2,30 +2,76 @@
   import * as Menubar from "$lib/components/ui/menubar";
   import * as Sheet from "$lib/components/ui/sheet/index.js";
   import * as HoverCard from "$lib/components/ui/hover-card";
+  import * as Accordion from "$lib/components/ui/accordion";
+  import Marquee from "../Marquee.svelte";
+  import FAQcard from "./FAQcard.svelte";
   import { Label } from "$lib/components/ui/label/index.js";
   import { Button } from "$lib/components/ui/button";
   import { Input } from "$lib/components/ui/input";
   import { Card } from "$lib/components/ui/card";
   import { Search } from "lucide-svelte";
+  import { Code } from "lucide-svelte";
+  
 
-  const categories = [
+  const sections = [
     "About Overview",
     "Our History",
     "Our Mission",
-    "Management",
     "FAQs",
   ];
 
   const recentArticles = [
     {
-      title: "Key Strategies for Previous Study",
-      date: "Oct 15, 2023",
+      title: "Inauguration of the New Faculty Executive Committee",
+      date: "Oct 30, 2024",
     },
     {
       title: "How to Balance Your Research Time",
       date: "Oct 10, 2023",
     },
   ];
+
+  const reviews = [
+    {
+      name: "Bhide",
+      username: "@Bhide",
+      body: "Noicee work. I love it. Keep it up.",
+      img: "https://avatar.vercel.sh/jack",
+    },
+    {
+      name: "Jodd",
+      username: "@Jodd",
+      body: "Wooww, this is what I was looking for. Great work.",
+      img: "https://avatar.vercel.sh/jill",
+    },
+    {
+      name: "Pokie",
+      username: "@Pokie",
+      body: "Svelte is Amazing and so are you. Keep it up.",
+      img: "https://avatar.vercel.sh/john",
+    },
+    {
+      name: "pablo",
+      username: "@pablo",
+      body: "Remarkable Stuff broooo. Added to my favourites.",
+      img: "https://avatar.vercel.sh/jane",
+    },
+    {
+      name: "Saloni",
+      username: "@Saloni",
+      body: "Acche hai, Chal mera Portfolio banade.",
+      img: "https://avatar.vercel.sh/jenny",
+    },
+    {
+      name: "Bhai",
+      username: "@Bhai",
+      body: "Svelte made easy with these components. Great work.",
+      img: "https://avatar.vercel.sh/james",
+    },
+  ];
+
+  let firstRow = reviews.slice(0, reviews.length / 2);
+  let secondRow = reviews.slice(reviews.length / 2);
 </script>
 
 <main class="w-full min-h-screen bg-gray-100">
@@ -434,13 +480,13 @@
             <div class="flex-grow">
               <!-- Article Text -->
               <div class="prose max-w-none">
-                <p>
+                <p class="text-gray-700 leading-relaxed">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Id magnam molestiae eum incidunt eius nesciunt exercitationem, iure laudantium possimus culpa necessitatibus earum, in qui et laboriosam debitis, corrupti ipsam dolorum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde repellat tempora eum voluptatibus dignissimos cum aut culpa nihil quia cupiditate.
                 </p>
 
 
-                <div class="flex flex-col md:flex-row items-center gap-8 p-6 max-w-7xl mx-auto my-10">
-                  <div class="flex-shrink-0 w-full lg:w-[400px] h-full lg:h-[400px]">
+                <div class="flex flex-col md:flex-row items-center gap-8 p-6 max-w-7xl mx-auto my-7">
+                  <div class="flex-shrink-0 w-full md:w-2/4 h-full md:h-2/4">
                     <enhanced:img
                       src="/src/assets/file2.png"
                       alt="NACOS Logo"
@@ -449,14 +495,14 @@
                   </div>
                   
                   <div class="flex flex-col gap-6 flex-1">
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum accusamus deleniti fugit dolorem aut beatae, dignissimos eos impedit ex. Laborum esse assumenda error necessitatibus quas officiis minima maxime consectetur nostrum! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio quia pariatur, non obcaecati ex atque nostrum minus. Laboriosam vitae blanditiis et, voluptatem necessitatibus beatae voluptas voluptatibus, architecto magni facilis eveniet? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam expedita voluptatum id deserunt eveniet possimus.
+                    <p class="text-gray-700 leading-relaxed">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, optio! Deserunt non perferendis nihil voluptatibus voluptatum! Consequatur neque nisi maiores ipsam accusantium tempore nam, cum et, debitis odio accusamus aliquam tenetur tempora perspiciatis, animi cupiditate vitae deserunt nihil ad? Nisi dolore numquam odio magni? Expedita iusto aliquam illo quibusdam, quod nulla hic dolorem laudantium pariatur eveniet perferendis illum obcaecati, suscipit ipsam consequuntur cupiditate esse, velit alias praesentium temporibus cum ratione?
                     </p>
                     
                     <div>
                       <Button 
                         variant="default" 
-                        class="bg-green-600 hover:bg-green-700 text-white font-medium px-8 py-2 rounded-full"
+                        class="bg-green-600 hover:bg-green-700 text-white font-medium px-8 py-2 rounded-lg"
                       >
                         READ MORE
                       </Button>
@@ -464,23 +510,104 @@
                   </div>
                 </div>
 
-                <!-- <enhanced:img
+                <div class="max-w-4xl mx-auto px-6">
+                  <h1 class="font-semibold text-base">Our History</h1>
+                  <p class="text-gray-700 leading-relaxed mb-5">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum commodi odio voluptates impedit fuga sequi rem quia, quaerat repellat. Voluptatum sed, expedita, necessitatibus saepe laboriosam voluptatibus quidem neque dolorum nesciunt natus debitis ad nemo molestiae perspiciatis maxime culpa magnam in consectetur. Quos aperiam iste labore aspernatur, officia aliquid tempora cumque.
+                  </p>
+                  <p class="text-gray-700 leading-relaxed mb-5">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, veritatis est! Voluptatem magnam alias nihil. Impedit rerum, blanditiis excepturi voluptatibus ad obcaecati. Maiores praesentium nulla incidunt optio ea saepe natus. Expedita quod aliquam deleniti dolores eius, odit voluptatem at nisi dolorum possimus maiores? Beatae obcaecati eveniet cumque, assumenda in natus amet porro ea, sed dolores at neque hic. Quasi, nemo!
+                  </p>
+                  <p class="text-gray-700 leading-relaxed">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iste est laboriosam? Dolore aliquam amet eum quas modi assumenda iusto cupiditate sapiente possimus nemo expedita a, in ab, at ipsum.
+                  </p>
+                </div>
+
+                <!-- <img
                   src="/placeholder.svg?height=300&width=800"
                   alt="STEM Lab Equipment"
                   class="my-6 w-full rounded-lg"
                 />
 
-                <p>
+                <p class="text-gray-700 leading-relaxed">
                   The new STEM lab features advanced equipment, including 3D
                   printers, robotics kits, and state-of-the-art microscopes.
                   These tools will enable students to engage in hands-on
                   learning and conduct complex experiments.
                 </p> -->
               </div>
+              
+              <div class="w-full max-w-4xl mx-auto p-6 mt-7">
+                <div class="flex justify-between items-center mb-3">
+                  <h1 class="font-semibold text-base">Our Mission</h1>
+                  <!-- <Button variant="link" class="text-primary flex items-center gap-1">
+                    See other programs
+                    <ChevronRight class="h-4 w-4" />
+                  </Button> -->
+                </div>
+
+                <div class="flex flex-wrap gap-6">
+    <Card class="flex-1 min-w-[280px] p-6">
+      <div class="flex items-start gap-4">
+        <div class="rounded-full p-2 bg-blue-50">
+          <Code class="h-6 w-6 text-primary" />
+        </div>
+        <div>
+          <h3 class="font-semibold mb-2">Bala Blue</h3>
+          <p class="text-sm text-muted-foreground">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore aliquid repellendus fugit velit. Inventore, eveniet.
+          </p>
+        </div>
+      </div>
+    </Card>
+
+    <Card class="flex-1 min-w-[280px] p-6">
+      <div class="flex items-start gap-4">
+        <div class="rounded-full p-2 bg-blue-50">
+          <Code class="h-6 w-6 text-primary" />
+        </div>
+        <div>
+          <h3 class="font-semibold mb-2">Bala Blue</h3>
+          <p class="text-sm text-muted-foreground">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi eveniet nostrum corporis cupiditate iste dolores.
+          </p>
+        </div>
+      </div>
+    </Card>
+
+    <Card class="flex-1 min-w-[280px] p-6">
+      <div class="flex items-start gap-4">
+        <div class="rounded-full p-2 bg-blue-50">
+          <Code class="h-6 w-6 text-primary" />
+        </div>
+        <div>
+          <h3 class="font-semibold mb-2">Bala Blue</h3>
+          <p class="text-sm text-muted-foreground">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex inventore ipsam quisquam quia vero laudantium.
+          </p>
+        </div>
+      </div>
+    </Card>
+
+    <Card class="flex-1 min-w-[280px] p-6">
+      <div class="flex items-start gap-4">
+        <div class="rounded-full p-2 bg-blue-50">
+          <Code class="h-6 w-6 text-primary" />
+        </div>
+        <div>
+          <h3 class="font-semibold mb-2">Bala Blue</h3>
+          <p class="text-sm text-muted-foreground">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse, aliquid! Quia, quo alias. Tempora, necessitatibus.
+          </p>
+        </div>
+      </div> 
+    </Card>
+                </div>
+              </div>
             </div>
 
             <!-- Sidebar -->
-            <div class="w-80 flex-shrink-0">
+            <div class="w-80 flex-shrink-0 hidden xl:block">
               <!-- Search -->
               <Card class="p-4 mb-6">
                 <h2 class="font-semibold mb-4">Search Bar</h2>
@@ -492,17 +619,17 @@
                 </div>
               </Card>
 
-              <!-- Categories -->
+              <!-- sections -->
               <Card class="p-4 mb-6">
-                <h2 class="font-semibold mb-4">Categories</h2>
+                <h2 class="font-semibold mb-4">Sections</h2>
                 <ul class="space-y-2">
-                  {#each categories as category}
+                  {#each sections as section}
                     <li>
                       <a
-                        href="#{category.toLowerCase().replace(' ', '-')}"
+                        href="#{section.toLowerCase().replace(' ', '-')}"
                         class="text-sm text-muted-foreground transition-colors hover:text-green-600"
                       >
-                        {category}
+                        {section}
                       </a>
                     </li>
                   {/each}
@@ -530,6 +657,31 @@
               </Card>
             </div>
           </div>
+
+          <!-- FAQ Marquee -->
+          <div class="w-full mx-auto px-6 mt-10">
+                <h1 class="font-semibold text-base tracking-wider">Frequently Asked Questions</h1>
+                <div
+  class="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background py-5"
+>
+  <Marquee pauseOnHover class="[--duration:20s]">
+    {#each firstRow as item}
+      <FAQcard {...item} />
+    {/each}
+  </Marquee>
+  <Marquee reverse pauseOnHover class="[--duration:20s]">
+    {#each secondRow as item}
+      <FAQcard {...item} />
+    {/each}
+  </Marquee>
+  <div
+    class="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"
+  ></div>
+  <div
+    class="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"
+  ></div>
+</div>                
+              </div>
         </div>
       </div>
     </main>

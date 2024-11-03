@@ -5,7 +5,7 @@
   import { CheckIcon, ChevronRightIcon } from "lucide-svelte";
 </script>
 
-<div class="bg-white px-7 lg:px-12 md:px-0 py-20">
+<div class="bg-white px-7 lg:px-12 md:px-5 py-20">
   <div class="flex flex-col md:flex-row w-full max-w-6xl mx-auto shadow-lg">
     <div class="md:w-1/2">
       <img
