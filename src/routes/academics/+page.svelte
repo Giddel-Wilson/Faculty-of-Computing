@@ -7,6 +7,11 @@
   import * as HoverCard from "$lib/components/ui/hover-card";
   import * as Dialog from "$lib/components/ui/dialog";
   import { onMount } from "svelte";
+  import background1 from "/src/assets/background1.jpg";
+  import background2 from "/src/assets/background2.jpg"; 
+  import background3 from "/src/assets/background3.jpg";
+  import wallpaper from "/src/assets/wallpaperflare.com_wallpaper.jpg";
+
   import {
     ChevronLeft,
     ChevronRight,
@@ -17,25 +22,25 @@
   const slides = [
     {
       id: 1,
-      image: "/src/assets/background1.jpg?enhanced",
+      image: background1,
       title: "Slide 1",
       content: `lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50. lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50.`,
     },
     {
       id: 2,
-      image: "/src/assets/background2.jpg?enhanced",
+      image: background2,
       title: "Slide 2",
       content: `lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50. lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50.`,
     },
     {
       id: 3,
-      image: "/src/assets/background3.jpg?enhanced",
+      image: background3,
       title: "Slide 3",
       content: `lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50. lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50.`,
     },
     {
       id: 4,
-      image: "/src/assets/wallpaperflare.com_wallpaper.jpg?enhanced",
+      image: wallpaper,
       title: "Slide 4",
       content: `lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50. lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50.`,
     },
