@@ -618,7 +618,7 @@
   </div>
 
   <!-- Call to Action -->
-  <div class="text-center py-12 px-10 mt-20">
+  <div class="text-center py-12 px-4 md:px-0 mt-20">
     <h2 class="text-3xl font-bold text-green-600 mb-4">
       Ready to take the next step?
     </h2>
