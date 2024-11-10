@@ -5,13 +5,7 @@
   import * as Menubar from "$lib/components/ui/menubar";
   import * as Sheet from "$lib/components/ui/sheet/index.js";
   import * as HoverCard from "$lib/components/ui/hover-card";
-  import * as Dialog from "$lib/components/ui/dialog";
-  import { onMount } from "svelte";
-  import background1 from "/src/assets/background1.jpg";
-  import background2 from "/src/assets/background2.jpg"; 
-  import background3 from "/src/assets/background3.jpg";
-  import wallpaper from "/src/assets/wallpaperflare.com_wallpaper.jpg";
-
+  
   import {
     ChevronLeft,
     ChevronRight,
@@ -22,25 +16,25 @@
   const slides = [
     {
       id: 1,
-      image: background1,
+      image: "https://i.pinimg.com/236x/1b/96/c1/1b96c17ac6dcf778c8ed462a794c464f.jpg?enhanced",
       title: "Slide 1",
       content: `lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50. lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50.`,
     },
     {
       id: 2,
-      image: background2,
+      image: "https://i.pinimg.com/236x/30/a0/d8/30a0d85c895e39a5c5e13a1dc4feb039.jpg?enhanced",
       title: "Slide 2",
       content: `lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50. lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50.`,
     },
     {
       id: 3,
-      image: background3,
+      image: "https://i.pinimg.com/236x/74/ae/ec/74aeec03319551c98212c62426955b72.jpg?enhanced",
       title: "Slide 3",
       content: `lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50. lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50.`,
     },
     {
       id: 4,
-      image: wallpaper,
+      image: "https://i.pinimg.com/236x/4b/8a/1f/4b8a1fae39b0e6d59f7b51909b08f03d.jpg?enhanced",
       title: "Slide 4",
       content: `lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50. lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50.`,
     },
@@ -444,7 +438,7 @@
             Voluptatum ipsam eos rem quia iure excepturi, qui illum unde magnam
             veniam. <a
               href="mailto:foc@uniport.edu"
-              class="text-blue-600 hover:underline">foc@uniport.edu</a
+              class="text-green-600 hover:underline">foc@uniport.edu</a
             >.
           </p>
 
@@ -473,9 +467,9 @@
           ></div>
 
           <img
-            src="/src/assets/wallpaperflare.com_wallpaper.jpg"
+            src="https://i.pinimg.com/736x/04/8c/d4/048cd47655bd3b2dfaae8b4db3bfe8fd.jpg?enhanced"
             alt=""
-            class="w-full h-auto rounded-sm object-cover relative z-20"
+            class="w-full h-96 rounded-sm object-cover relative z-20"
           />
         </div>
       </div>
