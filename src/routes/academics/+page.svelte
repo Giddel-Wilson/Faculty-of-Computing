@@ -17,25 +17,25 @@
   const slides = [
     {
       id: 1,
-      image: "./src/assets/background1.jpg?enhanced",
+      image: "/src/assets/background1.jpg?enhanced",
       title: "Slide 1",
       content: `lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50. lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50.`,
     },
     {
       id: 2,
-      image: "./src/assets/background2.jpg?enhanced",
+      image: "/src/assets/background2.jpg?enhanced",
       title: "Slide 2",
       content: `lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50. lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50.`,
     },
     {
       id: 3,
-      image: "./src/assets/background3.jpg?enhanced",
+      image: "/src/assets/background3.jpg?enhanced",
       title: "Slide 3",
       content: `lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50. lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50.`,
     },
     {
       id: 4,
-      image: "./src/assets/wallpaperflare.com_wallpaper.jpg?enhanced",
+      image: "/src/assets/wallpaperflare.com_wallpaper.jpg?enhanced",
       title: "Slide 4",
       content: `lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50. lorem50 ipsum50 dolor50 sit50 amet50, consectetur50 adipiscing50 elit50. Aenean50 commodo, ipsum50 at50 rhoncus50 eget50, velit50 nunc50 cursus50 nunc50.`,
     },
@@ -468,8 +468,8 @@
           ></div>
 
           <img
-            src="./src/assets/wallpaperflare.com_wallpaper.jpg"
-            alt="LMU Campus"
+            src="/src/assets/wallpaperflare.com_wallpaper.jpg"
+            alt=""
             class="w-full h-auto rounded-sm object-cover relative z-20"
           />
         </div>
